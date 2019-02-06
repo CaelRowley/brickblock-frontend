@@ -4,6 +4,16 @@
         "browser": true
     },
     "rules": {
-        "react/prefer-stateless-function": "off"
+        "react/prefer-stateless-function": "off",
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": "always",
+                "ObjectPattern": {
+                    "multiline": true
+                }
+            }
+        ],
+        "react/jsx-one-expression-per-line": false
     }
 }
