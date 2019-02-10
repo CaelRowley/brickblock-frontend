@@ -58,6 +58,9 @@ jobs:
           name: Installing dependencies
           command: npm install
       - run:
+          name: Set auth0 config variables
+          command: npm run set-auth0
+      - run:
           name: Build the app
           command: npm run build
       - run:
@@ -92,6 +95,9 @@ jobs:
       - run:
           name: Installing dependencies
           command: npm install
+      - run:
+          name: Set auth0 config variables
+          command: npm run set-auth0
       - run:
           name: Build the app
           command: npm run build
