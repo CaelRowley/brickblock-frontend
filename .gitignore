@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # auth0 config
-auth0-variables.js
+auth0-variables-local.js
 
