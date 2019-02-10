@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo $PWD
 cd ./src/Auth/
+echo $PWD
 
 sed -i -e "s/process.env.AUTH0_DOMAIN/$AUTH0_DOMAIN/g" ./auth0-variables.js
 sed -i -e "s/process.env.AUTH0_CLIENT_ID/$AUTH0_CLIENT_ID/g" ./auth0-variables.js
