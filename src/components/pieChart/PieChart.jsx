@@ -2,11 +2,14 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
+import TableauReport from 'tableau-react';
 
 const PieChart = props => (isAuthenticated() ? (
   <div>
     <h2>Pie Chart</h2>
-    <p>This page is private and only visible after logging in.</p>
+    <TableauReport
+      url="https://public.tableau.com/views/PieChart_162/PieChart?:embed=y&:display_count=yes"
+    />
   </div>
 ) : (
     <Redirect

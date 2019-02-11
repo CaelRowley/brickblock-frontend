@@ -2,11 +2,14 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
+import TableauReport from 'tableau-react';
 
 const BubblesChart = props => (isAuthenticated() ? (
   <div>
     <h2>Bubbles Chart</h2>
-    <p>This page is private and only visible after logging in.</p>
+    <TableauReport
+      url="https://public.tableau.com/views/BubblesChart/BubblesChart?:embed=y&:display_count=yes"
+    />
   </div>
 ) : (
     <Redirect
