@@ -20,8 +20,14 @@ const App = () => (
         <Route path="/contributionsvertime" component={ContributionsOverTime} />
         <Route path="/piechart" component={PieChart} />
         <Route path="/bubbleschart" component={BubblesChart} />
-        <Route path="/transacionsvstimeaddressess" component={TransactionsVsTimeAddresses} />
-        <Route path="/transactionsvstimecurrencies" component={TransactionsVsTimeCurrencies} />
+        <Route
+          path="/transacionsvstimeaddressess"
+          component={TransactionsVsTimeAddresses}
+        />
+        <Route
+          path="/transactionsvstimecurrencies"
+          component={TransactionsVsTimeCurrencies}
+        />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
       </Switch>
@@ -36,4 +42,3 @@ export default App;
 // import TransactionsVsTimeCurrencies from '../../components/transactionsVsTimeCurrencies/TransactionsVsTimeCurrencies';
 
 // <Route path="/bubbleschart" component={BubblesChart} />
-  

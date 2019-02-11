@@ -4,7 +4,7 @@ import isAuthenticated from '../../auth/isAuthenticated';
 
 const Header = () => (
   <header>
-    <h1>React Auth0 App</h1>
+    <h1>Brickblock Challenge</h1>
     <nav>
       <ul>
         <li>
@@ -20,10 +20,14 @@ const Header = () => (
           <Link to="/bubbleschart">Bubbles Chart</Link>
         </li>
         <li>
-          <Link to="/transacionsvstimeaddressess">Transactions Vs Time Addresses</Link>
+          <Link to="/transacionsvstimeaddressess">
+            Transactions Vs Time Addresses
+          </Link>
         </li>
         <li>
-          <Link to="/transactionsvstimecurrencies">Transactions Vs Time Currencies</Link>
+          <Link to="/transactionsvstimecurrencies">
+            Transactions Vs Time Currencies
+          </Link>
         </li>
         {!isAuthenticated() && (
           <li>
