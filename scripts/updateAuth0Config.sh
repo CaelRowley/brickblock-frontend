@@ -11,9 +11,9 @@ echo "callbackUrl: '$AUTH0_CALLBACK_URL'" >> auth0-variables-prod.js
 echo "}" >> auth0-variables-prod.js
 
 rm -f auth0-variables.js
-echo "import authVariables from './auth0-variables-prod';" > auth0-variables-prod.js
-echo "" >> auth0-variables-prod.js
-echo "export default authVariables;" >> auth0-variables-prod.js
+echo "import authVariables from './auth0-variables-prod';" > auth0-variables.js
+echo "" >> auth0-variables.js
+echo "export default authVariables;" >> auth0-variables.js
 
 
 
