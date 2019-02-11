@@ -4,48 +4,26 @@ import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauGraph from '../../components/tableauGraph/TableauGraph';
 
-// import { connect } from 'react-redux'
+const TableauContainer = (props) => {
+  const { tableauUrl } = props;
 
-
-const TableauContainer = props => {
-  const {
-    tableauUrl
-  } = props;
-
-  console.log('In container: ' + tableauUrl);
-
-  if (isAuthenticated()){
+  if (isAuthenticated()) {
     return (
       <div>
-        <TableauGraph 
-          tableauUrl={tableauUrl}/>
+        <TableauGraph tableauUrl={tableauUrl} />
       </div>
-    )
-  } else {
-    return (
-      <Redirect
-        to={{
-          pathname: '/login',
-          state: {
-            from: props.location,
-          },
-        }}
-      />
-    )
+    );
   }
-}
-
-// const mapStateToProps = (state) => {
-//   const {
-//     tableauUrl
-//   } = state.tableauReducers
-
-//   return {
-//     tableauUrl
-//   }
-// }
+  return (
+    <Redirect
+      to={{
+        pathname: '/login',
+        state: {
+          from: props.location,
+        },
+      }}
+    />
+  );
+};
 
 export default TableauContainer;
-// export default connect(
-//   mapStateToProps
-// )(TableauContainer)

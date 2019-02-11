@@ -1,9 +1,8 @@
-const updateHomeText = (homeText) => ({
+const updateHomeText = homeText => ({
   type: 'CHANGE_HOME_TEXT',
-  homeText
-})
+  homeText,
+});
 
-export const changeHomeText = () => async (dispatch, getState) => {
-  const state = getState();
+export const changeHomeText = () => async (dispatch) => {
   dispatch(updateHomeText('this is the new text'));
-}
+};

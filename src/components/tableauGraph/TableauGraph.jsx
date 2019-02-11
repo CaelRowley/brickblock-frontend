@@ -1,29 +1,33 @@
-/* eslint-disable react/prop-types, react/destructuring-assignment */
-import React, {Component} from 'react';
-import TableauReport from 'tableau-react';
+/* eslint-disable no-unused-vars, prefer-destructuring, react/prop-types, react/destructuring-assignment */
+import React, { Component } from 'react';
+import tableau from 'tableau-api';
 
-const options = {
-  hideToolbar: true,
-};
+let viz;
 
 class TableauGraph extends Component {
+  componentDidMount() {
+    this.initViz();
+  }
+
+  componentDidUpdate() {
+    this.initViz();
+  }
+
+  initViz() {
+    const vizUrl = this.props.tableauUrl;
+    const vizContainer = this.vizContainer;
+    if (viz) viz.dispose();
+    viz = new window.tableau.Viz(vizContainer, vizUrl);
+  }
+
   render() {
-    const {
-      tableauUrl
-    } = this.props;
-
-    console.log('In component: ' + tableauUrl);
-
     return (
-      <div>
-        <div>URL HERE</div>
-        <div>{tableauUrl}</div>
-        <TableauReport
-          url={tableauUrl}
-          options={options}
-        />
-      </div>
-    )
+      <div
+        ref={(div) => {
+          this.vizContainer = div;
+        }}
+      />
+    );
   }
 }
 

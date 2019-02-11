@@ -1,9 +1,8 @@
-const updateUrl = (tableauUrl) => ({
+const updateUrl = tableauUrl => ({
   type: 'UPDATE_TABLEAU_URL',
-  tableauUrl
+  tableauUrl,
 });
 
-export const updateTableauUrl = (tableauUrl) => async (dispatch, getState) => {
-  console.log("in actions: " + tableauUrl);
+export const updateTableauUrl = tableauUrl => async (dispatch) => {
   dispatch(updateUrl(tableauUrl));
 };

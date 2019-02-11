@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
+import * as urls from '../../constants/TableauURLs';
 
 const Header = (props) => {
-  const {
-    updateTableauUrl
-  } = props;
+  const { updateTableauUrl } = props;
 
   return (
     <header>
@@ -16,26 +15,54 @@ const Header = (props) => {
             <Link to="/">Public Page</Link>
           </li>
           <li>
-            {/* <Link to="/contributionsvertime">Contributions Over Time</Link> */}
-            <button onClick={(event) => { 
-              event.preventDefault();
-              updateTableauUrl('https://public.tableau.com/views/PieChart_162/PieChart?:embed=y&:display_count=yes&:refresh=yes')}}>Pie Chart</button>
+            <button
+              type="button"
+              onClick={() => {
+                updateTableauUrl(urls.PIE_CHART);
+              }}
+            >
+              Pie Chart
+            </button>
           </li>
           <li>
-            <Link to="/piechart">Pie Chart</Link>
+            <button
+              type="button"
+              onClick={() => {
+                updateTableauUrl(urls.CONT_OVER_TIME);
+              }}
+            >
+              Contributions Over Time
+            </button>
           </li>
           <li>
-            <Link to="/bubbleschart">Bubbles Chart</Link>
+            <button
+              type="button"
+              onClick={() => {
+                updateTableauUrl(urls.BUBBLE_CHART);
+              }}
+            >
+              Bubble Chart
+            </button>
           </li>
           <li>
-            <Link to="/transacionsvstimeaddressess">
-              Transactions Vs Time Addresses
-          </Link>
+            <button
+              type="button"
+              onClick={() => {
+                updateTableauUrl(urls.TRANS_VS_TIME_ADDRESSES);
+              }}
+            >
+              Transactions vs Time (Addresses)
+            </button>
           </li>
           <li>
-            <Link to="/transactionsvstimecurrencies">
-              Transactions Vs Time Currencies
-          </Link>
+            <button
+              type="button"
+              onClick={() => {
+                updateTableauUrl(urls.TRANS_VS_TIME_CURRENCIES);
+              }}
+            >
+              Transactions vs Time (Currencies)
+            </button>
           </li>
           {!isAuthenticated() && (
             <li>
@@ -50,7 +77,7 @@ const Header = (props) => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

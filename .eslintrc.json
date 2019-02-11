@@ -16,6 +16,8 @@
             }
         ],
         "react/jsx-one-expression-per-line": false,
-        "max-len": 0
+        "max-len": 0,
+        "import/prefer-default-export": 1,
+        "react/prop-types": 1
     }
 }
