@@ -1,28 +1,30 @@
 /* eslint-disable react/prop-types, react/destructuring-assignment */
-import React from 'react';
+import React, {Component} from 'react';
 import TableauReport from 'tableau-react';
 
 const options = {
   hideToolbar: true,
 };
 
-const TableauGraph = props => {
-  const {
-    homeText,
-    componentText1,
-    componentText2
-  } = props;
+class TableauGraph extends Component {
+  render() {
+    const {
+      tableauUrl
+    } = this.props;
 
-  return (
-    <div>
-      <div>HOMETEXT</div>
-      <div>{homeText}</div>
-    <TableauReport
-      url="https://public.tableau.com/views/BubblesChart/BubblesChart?:embed=y&:display_count=yes"
-      options={options}
-    />
-    </div>
-  )
+    console.log('In component: ' + tableauUrl);
+
+    return (
+      <div>
+        <div>URL HERE</div>
+        <div>{tableauUrl}</div>
+        <TableauReport
+          url={tableauUrl}
+          options={options}
+        />
+      </div>
+    )
+  }
 }
 
 export default TableauGraph;

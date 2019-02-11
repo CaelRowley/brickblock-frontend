@@ -4,22 +4,21 @@ import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauGraph from '../../components/tableauGraph/TableauGraph';
 
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 
 const TableauContainer = props => {
   const {
-    homeText,
-    componentText1,
-    componentText2
+    tableauUrl
   } = props;
+
+  console.log('In container: ' + tableauUrl);
 
   if (isAuthenticated()){
     return (
       <div>
-        <h2>Tableau</h2>
         <TableauGraph 
-          homeText={homeText}/>
+          tableauUrl={tableauUrl}/>
       </div>
     )
   } else {
@@ -35,37 +34,18 @@ const TableauContainer = props => {
     )
   }
 }
-//   (isAuthenticated() ? (
-//   <div>
-//     <h2>Tableau</h2>
-//     <TableauGraph/>
-//   </div>
-// ) : (
-//   <Redirect
-//     to={{
-//       pathname: '/login',
-//       state: {
-//         from: props.location,
-//       },
-//     }}
-//   />
-// ));
 
-const mapStateToProps = (state) => {
-  const {
-    homeText,
-    componentText1,
-    componentText2
-  } = state.home
+// const mapStateToProps = (state) => {
+//   const {
+//     tableauUrl
+//   } = state.tableauReducers
 
-  return {
-    homeText,
-    componentText1,
-    componentText2
-  }
-}
+//   return {
+//     tableauUrl
+//   }
+// }
 
-// export default TableauContainer;
-export default connect(
-  mapStateToProps
-)(TableauContainer)
+export default TableauContainer;
+// export default connect(
+//   mapStateToProps
+// )(TableauContainer)

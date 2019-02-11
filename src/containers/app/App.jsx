@@ -12,49 +12,41 @@ import TransactionsVsTimeAddresses from '../../components/transactionsVsTimeAddr
 import TransactionsVsTimeCurrencies from '../../components/transactionsVsTimeCurrencies/TransactionsVsTimeCurrencies';
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
-import { changeHomeText } from '../../data/actions/actions'
+import { updateTableauUrl } from '../../data/actions/actions'
 
 const mapStateToProps = (state) => {
   const {
-    homeText,
-    componentText1,
-    componentText2
-  } = state.home
+    tableauUrl
+  } = state.tableauReducers
 
   return {
-    homeText,
-    componentText1,
-    componentText2
+    tableauUrl
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeHomeText: () => dispatch(changeHomeText())
+    updateTableauUrl: (newUrl) => dispatch(updateTableauUrl(newUrl))
   }
 }
 
 class App extends Component {
-  async componentWillMount() {
-    const {
-      changeHomeText
-    } = this.props
-    await changeHomeText();
-  }
 
   render() {
     const {
-      homeText,
-      componentText1,
-      componentText2
+      updateTableauUrl,
+      tableauUrl
     } = this.props;
 
     return (
       <div>
-        <Header />
+        <Header 
+          updateTableauUrl={updateTableauUrl}
+        />
+        <TableauContainer tableauUrl={tableauUrl}/>
         <main>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            {/* <Route exact path="/" component={HomePage} />
             <Route path="/contributionsvertime" component={ContributionsOverTime} />
             <Route path="/piechart" component={TableauContainer} />
             <Route path="/bubbleschart" component={BubblesChart} />
@@ -65,7 +57,7 @@ class App extends Component {
             <Route
               path="/transactionsvstimecurrencies"
               component={TransactionsVsTimeCurrencies}
-            />
+            /> */}
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
           </Switch>
