@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import Header from '../../components/header/Header';
 import HomePage from '../../components/homePage/HomePage';
 import ContributionsOverTime from '../../components/contributionsOverTime/ContributionsOverTime';
-import PieChart from '../../components/pieChart/PieChart';
+import TableauContainer from '../tableauContainer/TableauContainer';
 import BubblesChart from '../../components/bubblesChart/BubblesChart';
 import TransactionsVsTimeAddresses from '../../components/transactionsVsTimeAddresses/TransactionsVsTimeAddresses';
 import TransactionsVsTimeCurrencies from '../../components/transactionsVsTimeCurrencies/TransactionsVsTimeCurrencies';
@@ -56,7 +56,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/contributionsvertime" component={ContributionsOverTime} />
-            <Route path="/piechart" component={PieChart} />
+            <Route path="/piechart" component={TableauContainer} />
             <Route path="/bubbleschart" component={BubblesChart} />
             <Route
               path="/transacionsvstimeaddressess"
