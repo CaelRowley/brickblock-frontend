@@ -1,4 +1,5 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb",
     "env": {
         "browser": true
@@ -14,6 +15,7 @@
                 }
             }
         ],
-        "react/jsx-one-expression-per-line": false
+        "react/jsx-one-expression-per-line": false,
+        "max-len": 0
     }
 }

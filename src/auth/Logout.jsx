@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types, react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
 class Logout extends Component {
-
   constructor(props) {
     super(props);
     localStorage.removeItem('access_token');
@@ -12,10 +12,14 @@ class Logout extends Component {
 
   render() {
     return (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: this.props.location }
-      }} />
+      <Redirect
+        to={{
+          pathname: '/login',
+          state: {
+            from: this.props.location,
+          },
+        }}
+      />
     );
   }
 }

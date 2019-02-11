@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Public = () => (
+const HomePage = () => (
   <div>
-    <h2>Public Page</h2>
+    <h2>Home Page</h2>
     <p>This page is public and visible without logging in.</p>
   </div>
-)
+);
 
-export default Public;
+export default HomePage;
