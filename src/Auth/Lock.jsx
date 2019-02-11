@@ -1,10 +1,8 @@
+/* eslint-disable react/prop-types, react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Auth0Lock from 'auth0-lock';
 import AUTH_CONFIG from './config/auth0-variables';
-
-console.log("HUUUUUUUUU");
-console.log(AUTH_CONFIG);
 
 class Lock extends Component {
   lock = new Auth0Lock(AUTH_CONFIG.clientId, AUTH_CONFIG.domain, {
@@ -29,6 +27,13 @@ class Lock extends Component {
     this.onAuthenticated();
   }
 
+  componentDidMount() {
+    // Avoid showing Lock when hash is parsed.
+    if (!/access_token|id_token|error/.test(this.props.location.hash)) {
+      this.lock.show();
+    }
+  }
+
   onAuthenticated() {
     this.lock.on('authenticated', (authResult) => {
       const expiresAt = JSON.stringify(
@@ -42,13 +47,6 @@ class Lock extends Component {
         loggedIn: true,
       });
     });
-  }
-
-  componentDidMount() {
-    // Avoid showing Lock when hash is parsed.
-    if (!/access_token|id_token|error/.test(this.props.location.hash)) {
-      this.lock.show();
-    }
   }
 
   render() {

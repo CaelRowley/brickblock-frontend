@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types, react/destructuring-assignment */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 

@@ -15,10 +15,9 @@ const App = () => (
         <Route path="/private" component={Private} />
         <Route path="/login" component={Login} />
         <Route path="/logout" component={Logout} />
-        }}/>
       </Switch>
     </main>
   </div>
-)
+);
 
-export default App
+export default App;
