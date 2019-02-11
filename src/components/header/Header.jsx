@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import isAuthenticated from '../Auth/isAuthenticated';
+import isAuthenticated from '../../auth/isAuthenticated';
 
 const Header = () => (
   <header>
@@ -11,7 +11,19 @@ const Header = () => (
           <Link to="/">Public Page</Link>
         </li>
         <li>
-          <Link to="/private">Private Page</Link>
+          <Link to="/contributionsvertime">Contributions Over Time</Link>
+        </li>
+        <li>
+          <Link to="/piechart">Pie Chart</Link>
+        </li>
+        <li>
+          <Link to="/bubbleschart">Bubbles Chart</Link>
+        </li>
+        <li>
+          <Link to="/transacionsvstimeaddressess">Transactions Vs Time Addresses</Link>
+        </li>
+        <li>
+          <Link to="/transactionsvstimecurrencies">Transactions Vs Time Currencies</Link>
         </li>
         {!isAuthenticated() && (
           <li>
