@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./src/Auth/config
+cd ./src/auth/config
 
 rm -f auth0-variables-prod.js
 echo "export default {" > auth0-variables-prod.js
