@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./src/Auth/
+cd ./src/Auth/config
 rm -f auth0-variables-prod.js
 
 echo "export const AUTH_CONFIG = {" > auth0-variables-prod.js
