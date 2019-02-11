@@ -4,11 +4,16 @@ import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauReport from 'tableau-react';
 
+const options = {
+  hideToolbar: true,
+};
+
 const ContributionsOverTime = props => (isAuthenticated() ? (
   <div>
     <h2>Contributions Over Time</h2>
     <TableauReport
       url="https://public.tableau.com/views/ContributionsOverTime_0/ContributionsOverTime?:embed=y&:display_count=yes"
+      options={options}
     />
   </div>
 ) : (
