@@ -62,7 +62,7 @@ class Lock extends Component {
     ) : (
       <Redirect
         to={{
-          pathname: '/private',
+          pathname: '/',
           state: {
             from: this.props.location,
           },
