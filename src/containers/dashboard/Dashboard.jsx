@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauContainer from '../tableauContainer/TableauContainer';
 import * as urls from '../../constants/TableauURLs';
-import { mockICOs } from '../../mock-data/MockData';
+// import { mockICOs } from '../../mock-data/MockData';
 
 const Header = (props) => {
   const { updateTableauUrl, tableauUrl, data } = props;
-  const mockData = {
-    data: {
-      ICOs: mockICOs(100),
-    },
-  };
+  // const mockData = {
+  //   data: {
+  //     ICOs: mockICOs(100),
+  //   },
+  // };
 
   return (
     <div>
