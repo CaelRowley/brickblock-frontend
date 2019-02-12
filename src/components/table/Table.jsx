@@ -7,7 +7,7 @@ const Table = (props) => {
   const { data } = props;
 
   let tableData = [];
-  if (data && data.data && data.data.ICOs){
+  if (data && data.data && data.data.ICOs) {
     tableData = data.data.ICOs;
   }
 
