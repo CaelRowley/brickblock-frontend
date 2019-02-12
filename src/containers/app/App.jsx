@@ -13,6 +13,7 @@ import {
   startPollingGraphql,
   stopPollingGraphql,
   updateTableauUrl,
+  updateICOData,
 } from '../../data/actions/actions';
 
 const mapStateToProps = (state) => {
@@ -26,17 +27,19 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   updateTableauUrl: newUrl => dispatch(updateTableauUrl(newUrl)),
+  updateICOData: () => dispatch(updateICOData()),
   startPollingGraphql: () => dispatch(startPollingGraphql()),
   stopPollingGraphql: () => dispatch(stopPollingGraphql()),
 });
 
 class App extends Component {
-  componentDidMount() {
-    this.props.startPollingGraphql();
+  async componentDidMount() {
+    // this.props.startPollingGraphql();
+    await this.props.updateICOData();
   }
 
   componentWillUnmount() {
-    this.props.stopPollingGraphql();
+    // this.props.stopPollingGraphql();
   }
 
   render() {
