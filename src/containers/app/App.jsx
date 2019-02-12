@@ -10,10 +10,10 @@ import HomePage from '../../components/homePage/HomePage';
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
 import {
-  startPollingGraphql,
-  stopPollingGraphql,
+  // startPollingGraphql,
+  // stopPollingGraphql,
   updateTableauUrl,
-  updateICOData,
+  // updateICOData,
 } from '../../data/actions/actions';
 
 const mapStateToProps = (state) => {
@@ -27,15 +27,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   updateTableauUrl: newUrl => dispatch(updateTableauUrl(newUrl)),
-  updateICOData: () => dispatch(updateICOData()),
-  startPollingGraphql: () => dispatch(startPollingGraphql()),
-  stopPollingGraphql: () => dispatch(stopPollingGraphql()),
+  // updateICOData: () => dispatch(updateICOData()),
+  // startPollingGraphql: () => dispatch(startPollingGraphql()),
+  // stopPollingGraphql: () => dispatch(stopPollingGraphql()),
 });
 
 class App extends Component {
   async componentDidMount() {
     // this.props.startPollingGraphql();
-    await this.props.updateICOData();
   }
 
   componentWillUnmount() {
