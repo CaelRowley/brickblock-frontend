@@ -8,6 +8,8 @@ import Table from '../../components/table/Table';
 const TableauContainer = (props) => {
   const { tableauUrl, data } = props;
 
+  console.log('container');
+  console.log(data);
   if (isAuthenticated()) {
     if (tableauUrl) {
       return (
