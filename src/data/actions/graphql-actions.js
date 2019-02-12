@@ -18,7 +18,7 @@ const fetchICOs = dispatch => fetch(MONGODB_URI, {
         _id
         address
         currency
-        value(exchange:"euro")
+        value
         txid
         date
       }

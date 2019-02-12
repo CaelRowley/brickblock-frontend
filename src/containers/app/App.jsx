@@ -10,8 +10,8 @@ import Footer from '../../components/footer/Footer';
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
 import {
-  // startPollingGraphql,
-  // stopPollingGraphql,
+  startPollingGraphql,
+  stopPollingGraphql,
   updateTableauUrl,
   // updateICOData,
 } from '../../data/actions/actions';
@@ -28,17 +28,17 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   updateTableauUrl: newUrl => dispatch(updateTableauUrl(newUrl)),
   // updateICOData: () => dispatch(updateICOData()),
-  // startPollingGraphql: () => dispatch(startPollingGraphql()),
-  // stopPollingGraphql: () => dispatch(stopPollingGraphql()),
+  startPollingGraphql: () => dispatch(startPollingGraphql()),
+  stopPollingGraphql: () => dispatch(stopPollingGraphql()),
 });
 
 class App extends Component {
   async componentDidMount() {
-    // this.props.startPollingGraphql();
+    this.props.startPollingGraphql();
   }
 
   componentWillUnmount() {
-    // this.props.stopPollingGraphql();
+    this.props.stopPollingGraphql();
   }
 
   render() {

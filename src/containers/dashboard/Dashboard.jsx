@@ -6,7 +6,7 @@ import * as urls from '../../constants/TableauURLs';
 import { mockICOs } from '../../mock-data/MockData';
 
 const Header = (props) => {
-  const { updateTableauUrl, tableauUrl } = props;
+  const { updateTableauUrl, tableauUrl, data } = props;
   const mockData = {
     data: {
       ICOs: mockICOs(100),
@@ -93,7 +93,7 @@ const Header = (props) => {
         </nav>
       </header>
 
-      <TableauContainer tableauUrl={tableauUrl} data={mockData} />
+      <TableauContainer tableauUrl={tableauUrl} data={data} />
     </div>
   );
 };
