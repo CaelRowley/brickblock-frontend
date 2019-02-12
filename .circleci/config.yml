@@ -39,6 +39,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
+          name: Set auth0 config variables
+          command: npm run set-auth0
+      - run:
+          name: Run linting
+          command: npm run lint
+      - run:
           name: Run tests
           command: npm test
 
@@ -60,6 +66,9 @@ jobs:
       - run:
           name: Set auth0 config variables
           command: npm run set-auth0
+      - run:
+          name: Set mongodb uri
+          command: npm run set-mongodb-dev
       - run:
           name: Build the app
           command: npm run build
@@ -98,6 +107,9 @@ jobs:
       - run:
           name: Set auth0 config variables
           command: npm run set-auth0
+      - run:
+          name: Set mongodb uri
+          command: npm run set-mongodb-prod
       - run:
           name: Build the app
           command: npm run build

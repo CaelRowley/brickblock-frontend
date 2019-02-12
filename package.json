@@ -4,14 +4,20 @@
   "private": true,
   "dependencies": {
     "auth0-lock": "^11.14.0",
+    "cross-fetch": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
+    "react-table": "^6.9.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "serve": "^10.1.2",
-    "tableau-react": "^1.2.0",
-    "winston": "^3.2.1"
+    "tableau-api": "^2.2.2",
+    "winston": "^3.2.1",
+    "xtend": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,7 +28,9 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
-    "set-auth0": "scripts/updateAuth0Config.sh"
+    "set-auth0": "scripts/updateAuth0Config.sh",
+    "set-mongodb-dev": "scripts/updateMongodbURIDev.sh",
+    "set-mongodb-prod": "scripts/updateMongodbURIProd.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
