@@ -43,3 +43,7 @@ export const startPollingGraphql = () => (dispatch) => {
 export const stopPollingGraphql = () => {
   clearInterval(timer);
 };
+
+export const updateICOData = () => (dispatch) => {
+  fetchICOs(dispatch);
+};
