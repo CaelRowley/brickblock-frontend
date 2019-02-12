@@ -29,8 +29,8 @@
     "eject": "react-scripts eject",
     "serve": "serve -s build",
     "set-auth0": "scripts/updateAuth0Config.sh",
-    "set-mongodb-dev": "scripts/updateMongodbURIDev.sh",
-    "set-mongodb-prod": "scripts/updateMongodbURIProd.sh"
+    "set-graphql-dev": "scripts/updateGraphqlURIDev.sh",
+    "set-graphql-prod": "scripts/updateGraphqlURIProd.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
