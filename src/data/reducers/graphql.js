@@ -14,7 +14,6 @@ const graphql = (state = defaultState, action) => {
       newState = extend(state, {
         data: action.data,
       });
-      console.log(newState);
       return newState;
     default:
       return state;

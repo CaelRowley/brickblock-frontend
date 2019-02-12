@@ -12,12 +12,10 @@ const Table = (props) => {
     {
       Header: 'Address',
       accessor: 'address',
-      minWidth: 200,
     },
     {
       Header: 'Txid',
       accessor: 'txid',
-      minWidth: 200,
     },
     {
       Header: 'Currency',
@@ -30,12 +28,9 @@ const Table = (props) => {
     {
       Header: 'Date',
       accessor: 'date',
-      minWidth: 200,
     },
   ];
 
-  console.log('TABLE');
-  console.log(tableData);
   return <ReactTable data={tableData} columns={columns} />;
 };
 
