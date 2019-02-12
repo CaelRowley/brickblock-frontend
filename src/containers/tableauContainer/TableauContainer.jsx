@@ -3,16 +3,26 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauGraph from '../../components/tableauGraph/TableauGraph';
+import Table from '../../components/table/Table';
 
 const TableauContainer = (props) => {
-  const { tableauUrl } = props;
+  const { tableauUrl, data } = props;
 
   if (isAuthenticated()) {
-    return (
-      <div>
-        <TableauGraph tableauUrl={tableauUrl} />
-      </div>
-    );
+    if(tableauUrl){
+      return (
+        <div>
+          <TableauGraph tableauUrl={tableauUrl} />
+        </div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <Table data={data}/>
+        </div>
+      );
+    }
   }
   return (
     <Redirect

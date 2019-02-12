@@ -1,19 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
+import TableauContainer from '../tableauContainer/TableauContainer';
 import * as urls from '../../constants/TableauURLs';
 
 const Header = (props) => {
-  const { updateTableauUrl } = props;
+  const { updateTableauUrl, tableauUrl, data } = props;
 
   return (
+    <div>
     <header>
       <h1>Brickblock Challenge</h1>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Public Page</Link>
-          </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  updateTableauUrl(null);
+                }}
+              >
+                Table
+            </button>
+            </li>
           <li>
             <button
               type="button"
@@ -77,6 +86,9 @@ const Header = (props) => {
         </ul>
       </nav>
     </header>
+
+      <TableauContainer tableauUrl={tableauUrl} data={data} />
+    </div>
   );
 };
 
