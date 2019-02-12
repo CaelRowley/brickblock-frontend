@@ -4,9 +4,9 @@ import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from '../../components/header/Header';
+import Dashboard from '../dashboard/Dashboard';
 import HomePage from '../../components/homePage/HomePage';
-import TableauContainer from '../tableauContainer/TableauContainer';
+
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
 import {
@@ -17,8 +17,10 @@ import {
 
 const mapStateToProps = (state) => {
   const { tableauUrl } = state.tableauReducers;
+  const { data } = state.graphql;
   return {
     tableauUrl,
+    data,
   };
 };
 
@@ -38,12 +40,15 @@ class App extends Component {
   }
 
   render() {
-    const { updateTableauUrl, tableauUrl } = this.props;
+    const { updateTableauUrl, tableauUrl, data } = this.props;
 
     return (
       <div>
-        <Header updateTableauUrl={updateTableauUrl} />
-        <TableauContainer tableauUrl={tableauUrl} />
+        <Dashboard
+          updateTableauUrl={updateTableauUrl}
+          tableauUrl={tableauUrl}
+          data={data}
+        />
         <main>
           <Switch>
             <Route exact path="/" component={HomePage} />
