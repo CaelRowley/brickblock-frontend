@@ -6,8 +6,6 @@ const updateICOs = data => ({
   data,
 });
 
-console.log(MONGODB_URI);
-
 const fetchICOs = dispatch => fetch(MONGODB_URI, {
   method: 'POST',
   headers: {

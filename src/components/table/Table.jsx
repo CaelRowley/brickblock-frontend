@@ -11,7 +11,7 @@ const Table = (props) => {
   const columns = [
     {
       Header: 'Address',
-      accessor: 'address', // String-based value accessors!
+      accessor: 'address',
     },
     {
       Header: 'Txid',
@@ -22,7 +22,7 @@ const Table = (props) => {
       accessor: 'currency',
     },
     {
-      Header: 'Value',
+      Header: 'Value (Euro)',
       accessor: 'value',
     },
     {
@@ -31,8 +31,6 @@ const Table = (props) => {
     },
   ];
 
-  console.log('TABLE');
-  console.log(tableData);
   return <ReactTable data={tableData} columns={columns} />;
 };
 
