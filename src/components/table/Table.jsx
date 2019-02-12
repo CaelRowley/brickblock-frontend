@@ -11,23 +11,26 @@ const Table = (props) => {
   const columns = [
     {
       Header: 'Address',
-      accessor: 'address', // String-based value accessors!
+      accessor: 'address',
+      minWidth: 200,
     },
     {
       Header: 'Txid',
       accessor: 'txid',
+      minWidth: 200,
     },
     {
       Header: 'Currency',
       accessor: 'currency',
     },
     {
-      Header: 'Value',
+      Header: 'Value (Euro)',
       accessor: 'value',
     },
     {
       Header: 'Date',
       accessor: 'date',
+      minWidth: 200,
     },
   ];
 
