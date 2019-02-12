@@ -9,20 +9,18 @@ const TableauContainer = (props) => {
   const { tableauUrl, data } = props;
 
   if (isAuthenticated()) {
-    if(tableauUrl){
+    if (tableauUrl) {
       return (
         <div>
           <TableauGraph tableauUrl={tableauUrl} />
         </div>
       );
     }
-    else {
-      return (
-        <div>
-          <Table data={data}/>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <Table data={data} />
+      </div>
+    );
   }
   return (
     <Redirect

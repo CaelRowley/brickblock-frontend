@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Dashboard from '..//dashboard/Dashboard';
+import Dashboard from '../dashboard/Dashboard';
 import HomePage from '../../components/homePage/HomePage';
 
 import Login from '../../auth/Login';
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
   const { data } = state.graphql;
   return {
     tableauUrl,
-    data
+    data,
   };
 };
 
@@ -44,7 +44,11 @@ class App extends Component {
 
     return (
       <div>
-        <Dashboard updateTableauUrl={updateTableauUrl} tableauUrl={tableauUrl} data={data}/>
+        <Dashboard
+          updateTableauUrl={updateTableauUrl}
+          tableauUrl={tableauUrl}
+          data={data}
+        />
         <main>
           <Switch>
             <Route exact path="/" component={HomePage} />
