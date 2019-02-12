@@ -1,12 +1,12 @@
 import fetch from 'cross-fetch';
-import { MONGODB_URI } from '../../constants/MongodbURI';
+import { GRAPHQL_URI } from '../../constants/GraphqlURI';
 
 const updateICOs = data => ({
   type: 'UPDATE_ICOS',
   data,
 });
 
-const fetchICOs = dispatch => fetch(MONGODB_URI, {
+const fetchICOs = dispatch => fetch(GRAPHQL_URI, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const fetchICOs = dispatch => fetch(MONGODB_URI, {
         _id
         address
         currency
-        value
+        value(exchange: "euro")
         txid
         date
       }
