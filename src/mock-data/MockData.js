@@ -31,9 +31,7 @@ const randomChars = (length) => {
 
 const randomCurrency = () => {
   const currencies = ['ETH', 'ETH', 'ETH', 'ETH', 'BTC', 'LTC', 'BTC'];
-  return currencies[
-    Math.floor(Math.random() * Math.floor(currencies.length + 1))
-  ];
+  return currencies[Math.floor(Math.random() * Math.floor(7))];
 };
 
 const randomValue = (currency) => {
@@ -44,17 +42,17 @@ const randomValue = (currency) => {
       const mweiInEth = 1000000000000;
       ranValue = Math.random() * 3.5;
       if (ranValue < 0.05) ranValue = 0.05;
-      return Math.floor(ranValue * mweiInEth);
+      return Math.floor(ranValue * 104.57);
     case 'BTC':
       const satoshiInBtc = 100000000;
       ranValue = Math.random() * 0.09;
       if (ranValue < 0.0016) ranValue = 0.0016;
-      return Math.floor(ranValue * satoshiInBtc);
+      return Math.floor(ranValue * 3198.64);
     case 'LTC':
       const litoshiInLtc = 100000000;
       ranValue = Math.random() * 5;
       if (ranValue < 0.13) ranValue = 0.13;
-      return Math.floor(ranValue * litoshiInLtc);
+      return Math.floor(ranValue * 27.29);
     default:
   }
 };
@@ -81,9 +79,7 @@ const randomNumOfTransactions = () => {
     9,
     10,
   ];
-  return numOfTransactions[
-    Math.floor(Math.random() * Math.floor(numOfTransactions.length + 1))
-  ];
+  return numOfTransactions[Math.floor(Math.random() * Math.floor(19))];
 };
 
 const randomICO = (address) => {

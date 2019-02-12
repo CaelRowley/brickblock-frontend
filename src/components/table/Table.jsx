@@ -18,6 +18,10 @@ const Table = (props) => {
       accessor: 'txid',
     },
     {
+      Header: 'Currency',
+      accessor: 'currency',
+    },
+    {
       Header: 'Value',
       accessor: 'value',
     },
