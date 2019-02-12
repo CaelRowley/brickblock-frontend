@@ -63,7 +63,7 @@ const Header = (props) => {
               <button
                 type="button"
                 onClick={() => {
-                  updateTableauUrl(urls.TRANS_VS_TIME_ADDRESSES);
+                  updateTableauUrl(urls.TRANS_VS_VALUE_ADDRESSES);
                 }}
               >
                 Transactions vs Time (Addresses)
@@ -73,7 +73,7 @@ const Header = (props) => {
               <button
                 type="button"
                 onClick={() => {
-                  updateTableauUrl(urls.TRANS_VS_TIME_CURRENCIES);
+                  updateTableauUrl(urls.TRANS_VS_VALUE_CURRENCIES);
                 }}
               >
                 Transactions vs Time (Currencies)
