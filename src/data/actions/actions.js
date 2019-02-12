@@ -1,4 +1,4 @@
-import { changeHomeText } from './home-actions';
+import { startPollingGraphql, stopPollingGraphql } from './graphql-actions';
 import { updateTableauUrl } from './tableau-actions';
 
-export { changeHomeText, updateTableauUrl };
+export { startPollingGraphql, stopPollingGraphql, updateTableauUrl };

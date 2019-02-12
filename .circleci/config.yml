@@ -67,6 +67,9 @@ jobs:
           name: Set auth0 config variables
           command: npm run set-auth0
       - run:
+          name: Set mongodb uri
+          command: npm run set-mongodb-dev
+      - run:
           name: Build the app
           command: npm run build
       - run:
@@ -104,6 +107,9 @@ jobs:
       - run:
           name: Set auth0 config variables
           command: npm run set-auth0
+      - run:
+          name: Set mongodb uri
+          command: npm run set-mongodb-prod
       - run:
           name: Build the app
           command: npm run build

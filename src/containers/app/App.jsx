@@ -1,4 +1,4 @@
-/* eslint-disable no-shadow */
+/* eslint-disable no-shadow, react/destructuring-assignment */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Switch, Route } from 'react-router-dom';
@@ -9,11 +9,14 @@ import HomePage from '../../components/homePage/HomePage';
 import TableauContainer from '../tableauContainer/TableauContainer';
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
-import { updateTableauUrl } from '../../data/actions/actions';
+import {
+  startPollingGraphql,
+  stopPollingGraphql,
+  updateTableauUrl,
+} from '../../data/actions/actions';
 
 const mapStateToProps = (state) => {
   const { tableauUrl } = state.tableauReducers;
-
   return {
     tableauUrl,
   };
@@ -21,9 +24,19 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   updateTableauUrl: newUrl => dispatch(updateTableauUrl(newUrl)),
+  startPollingGraphql: () => dispatch(startPollingGraphql()),
+  stopPollingGraphql: () => dispatch(stopPollingGraphql()),
 });
 
 class App extends Component {
+  componentDidMount() {
+    this.props.startPollingGraphql();
+  }
+
+  componentWillUnmount() {
+    this.props.stopPollingGraphql();
+  }
+
   render() {
     const { updateTableauUrl, tableauUrl } = this.props;
 

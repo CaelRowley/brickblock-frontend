@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "auth0-lock": "^11.14.0",
+    "cross-fetch": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
@@ -26,7 +27,9 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "serve": "serve -s build",
-    "set-auth0": "scripts/updateAuth0Config.sh"
+    "set-auth0": "scripts/updateAuth0Config.sh",
+    "set-mongodb-dev": "scripts/updateMongodbURIDev.sh",
+    "set-mongodb-prod": "scripts/updateMongodbURIProd.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
