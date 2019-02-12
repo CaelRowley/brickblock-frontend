@@ -13,7 +13,6 @@ import {
   startPollingGraphql,
   stopPollingGraphql,
   updateTableauUrl,
-  // updateICOData,
 } from '../../data/actions/actions';
 
 const mapStateToProps = (state) => {
@@ -27,7 +26,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   updateTableauUrl: newUrl => dispatch(updateTableauUrl(newUrl)),
-  // updateICOData: () => dispatch(updateICOData()),
   startPollingGraphql: () => dispatch(startPollingGraphql()),
   stopPollingGraphql: () => dispatch(stopPollingGraphql()),
 });

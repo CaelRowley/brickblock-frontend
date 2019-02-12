@@ -2,5 +2,5 @@
 
 cd ./src/constants
 
-rm -f MongodbURI.js
-echo "export const MONGODB_URI = '$MONGO_URI_PROD';" > MongodbURI.js
+rm -f GraphqlURI.js
+echo "export const GRAPHQL_URI = '$GRAPHQL_URI_PROD';" > GraphqlURI.js
