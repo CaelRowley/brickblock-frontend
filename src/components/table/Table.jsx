@@ -6,7 +6,10 @@ import 'react-table/react-table.css';
 const Table = (props) => {
   const { data } = props;
 
-  const tableData = data.data.ICOs;
+  let tableData = [];
+  if (data && data.data && data.data.ICOs) {
+    tableData = data.data.ICOs;
+  }
 
   const columns = [
     {
