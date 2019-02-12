@@ -34,9 +34,7 @@ const Table = (props) => {
     },
   ];
 
-  console.log('TABLE');
-  console.log(tableData);
-  return <ReactTable data={tableData} columns={columns} />;
+  return <ReactTable data={tableData} columns={columns} defaultPageSize={10} />;
 };
 
 export default Table;

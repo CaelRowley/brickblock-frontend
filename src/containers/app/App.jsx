@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Dashboard from '../dashboard/Dashboard';
-import HomePage from '../../components/homePage/HomePage';
+import Footer from '../../components/footer/Footer';
 
 import Login from '../../auth/Login';
 import Logout from '../../auth/Logout';
@@ -53,7 +53,7 @@ class App extends Component {
         />
         <main>
           <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={Footer} />
             <Route path="/login" component={Login} />
             <Route path="/logout" component={Logout} />
           </Switch>
