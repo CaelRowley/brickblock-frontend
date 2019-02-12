@@ -2,8 +2,8 @@ import React from 'react';
 
 const HomePage = () => (
   <div>
-    <h2>Home Page</h2>
-    <p>This page is public and visible without logging in.</p>
+    <h2>Brickblock</h2>
+    <p>This page is made for the Brickblock coding challenge</p>
   </div>
 );
 
