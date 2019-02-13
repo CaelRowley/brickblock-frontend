@@ -1,3 +1,4 @@
+// @flow weak
 import extend from 'xtend';
 
 import { CONT_OVER_TIME } from '../../constants/TableauURLs';

@@ -1,3 +1,4 @@
+// @flow weak
 import fetch from 'cross-fetch';
 import { GRAPHQL_URI } from '../../constants/GraphqlURI';
 

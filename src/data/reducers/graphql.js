@@ -1,3 +1,4 @@
+// @flow weak
 import extend from 'xtend';
 
 let newState;

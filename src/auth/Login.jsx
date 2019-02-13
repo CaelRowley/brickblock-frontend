@@ -1,3 +1,4 @@
+// @flow weak
 /* eslint-disable react/prop-types, react/destructuring-assignment */
 import React from 'react';
 import { Redirect } from 'react-router-dom';

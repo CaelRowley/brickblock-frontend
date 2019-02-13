@@ -1,3 +1,4 @@
+// @flow weak
 const updateUrl = tableauUrl => ({
   type: 'UPDATE_TABLEAU_URL',
   tableauUrl,

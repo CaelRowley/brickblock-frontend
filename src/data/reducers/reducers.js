@@ -1,3 +1,4 @@
+// @flow
 import { combineReducers } from 'redux';
 import graphql from './graphql';
 import tableauReducers from './tableau-reducers';

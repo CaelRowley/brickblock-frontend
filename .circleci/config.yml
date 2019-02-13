@@ -45,6 +45,9 @@ jobs:
           name: Run linting
           command: npm run lint
       - run:
+          name: Run flow
+          command: npm run flow
+      - run:
           name: Run tests
           command: npm test
 
