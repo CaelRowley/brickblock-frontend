@@ -36,7 +36,7 @@ Run the frontend locally as follows:
 npm start
 ```
 
-The app should now be avilable at http://localhost:3000/
+The app should now be available at http://localhost:3000/
 
 
 ## Project Scaffolding
@@ -47,7 +47,7 @@ This source code is transpiled to the `build` directory for deployment and testi
 
 
 ## Testing
-The default react-scripts test library and Chai are currently used for testing. The tests currently only exist on the `FrontendTests` branch.
+The default react-scripts test library and Chai are used for testing. The tests currently only exist on the `FrontendTests` branch.
 ```
 npm test
 ```
@@ -64,8 +64,10 @@ Flow is used as a lightweight static type checker. Flow currently only exist on 
 npm run flow
 ```
 
+
 ## Docker
 There app is dockerized, and the Dockerfile builds the app in production mode for the automated deployments
+
 
 ## CI/CD
 [CircleCI](https://circleci.com/) is used for continuous integration and deployment.
