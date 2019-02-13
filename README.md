@@ -1,4 +1,4 @@
-# brickblock-backend
+# brickblock-frontend
 A basic frontend that's built with react and uses redux for the state. This should display mock ICO offering data from the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend)
 
 
