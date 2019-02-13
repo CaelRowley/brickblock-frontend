@@ -70,6 +70,9 @@ jobs:
           name: Set graphql uri
           command: npm run set-graphql-dev
       - run:
+          name: Set isAuthentication check for deployment accesss
+          command: npm run set-is-auth
+      - run:
           name: Build the app
           command: npm run build
       - run:
@@ -110,6 +113,9 @@ jobs:
       - run:
           name: Set graphql uri
           command: npm run set-graphql-prod
+      - run:
+          name: Set isAuthentication check for deployment accesss
+          command: npm run set-is-auth
       - run:
           name: Build the app
           command: npm run build
