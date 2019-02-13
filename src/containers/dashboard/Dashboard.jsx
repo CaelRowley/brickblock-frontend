@@ -1,5 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
+import './Dashboard.css';
+import { Animated } from 'react-animated-css';
+import logo from './logo.svg';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauContainer from '../tableauContainer/TableauContainer';
 import * as urls from '../../constants/TableauURLs';
@@ -16,77 +22,88 @@ const Header = (props) => {
   return (
     <div>
       <header>
-        <h1>Brickblock Challenge</h1>
+        <Animated animationIn="flipInX" isVisible>
+          <img id="logo" src={logo} />
+        </Animated>
         <nav>
           <ul>
             <li>
-              <button
-                type="button"
+              <Button
                 onClick={() => {
                   updateTableauUrl(null);
                 }}
               >
                 Table
-              </button>
+              </Button>
             </li>
             <li>
-              <button
-                type="button"
+              <Button
                 onClick={() => {
                   updateTableauUrl(urls.PIE_CHART);
                 }}
               >
                 Pie Chart
-              </button>
+              </Button>
             </li>
             <li>
-              <button
+              <Button
                 type="button"
                 onClick={() => {
                   updateTableauUrl(urls.CONT_OVER_TIME);
                 }}
               >
                 Contributions Over Time
-              </button>
+              </Button>
             </li>
             <li>
-              <button
+              <Button
                 type="button"
                 onClick={() => {
                   updateTableauUrl(urls.BUBBLE_CHART);
                 }}
               >
                 Bubble Chart
-              </button>
+              </Button>
             </li>
             <li>
-              <button
+              <Button
                 type="button"
                 onClick={() => {
                   updateTableauUrl(urls.TRANS_VS_VALUE_ADDRESSES);
                 }}
               >
                 Transactions vs Time (Addresses)
-              </button>
+              </Button>
             </li>
             <li>
-              <button
+              <Button
                 type="button"
                 onClick={() => {
                   updateTableauUrl(urls.TRANS_VS_VALUE_CURRENCIES);
                 }}
               >
                 Transactions vs Time (Currencies)
-              </button>
+              </Button>
             </li>
             {!isAuthenticated() && (
               <li>
-                <Link to="/login">Login</Link>
+                <Button>
+                  <Link to="/login">Login</Link>
+                </Button>
               </li>
             )}
             {isAuthenticated() && (
               <li>
-                <Link to="/logout">Logout</Link>
+                <Button>
+                  <Link
+                    to="/logout"
+                    style={{
+                      color: '#F54269',
+                    }}
+                  >
+                    Logout
+                  </Link>
+                </Button>
               </li>
             )}
           </ul>
