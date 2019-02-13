@@ -74,7 +74,7 @@ There app is dockerized, and the Dockerfile builds the app in production mode fo
 
 Developers are required to work locally on a new branch. 
 
-When making a merge request into the 'development' CircleCI will trigger a 'build' job that will build the project, check linting, run flow, and run the tests. The merge request will be rejected if these checks fail.
+When making a merge request into the 'development' branch, CircleCI will trigger a 'build' job that will build the project, check linting, run flow, and run the tests. The merge request will be rejected if these checks fail.
 
 After merging a 'deployToDevelopment' job will trigger which will deploy the app to https://brickblock-frontend-develop.herokuapp.com  
 
