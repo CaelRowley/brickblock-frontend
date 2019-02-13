@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# brickblock-frontend
+A basic frontend that's built with react and uses redux for the state. This should display mock ICO offering data from the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Deployment
+There are two deployed environments 
 
-### `npm start`
+For development: https://brickblock-frontend-develop.herokuapp.com
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For production: https://brickblock-frontend.herokuapp.com          
+```
+WARNING
+As the application is deployed using the free heroku service they will sleep due to inactivity. 
+Please allow a short while for the app to build and serve if you get no response from the URL.
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Access
+The deployed 'brickblock-frontend' apps are protected with 'Auth0' and you will need to sign in with a valid user to access the website. You do not have permission to register your own account and get access. You can however run the application locally without needing to sign in with a user account.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
+1. [NodeJS](https://nodejs.org/)
+2. You also need to have the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend) server running with an exposed graphql endpoint
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
+1. Setup the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend) project and get it hosting a graphql endpoint
+2. Update `src/constants/GraphqlURI.js` to point to the graphql endpoint exposed by 'brickblock-backend' the default value is `http://localhost:8000/graphql`
+3. Run `npm install` to install the dependencies
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Quickstart
+Run the frontend locally as follows:
 
-### `npm run eject`
+```
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The app should now be available at http://localhost:3000/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project Scaffolding
+The `src` directory contains the source code for the frontend. It is built using React and Redux. The `src/test` directory contains the source code for the tests. It is built usind the default react-scripts test library and Chai.
+This source code is transpiled to the `build` directory for deployment and testing.
+1. `npm run build` will transpile the `src` and `test` directories into `build`
+2. `npm run serve` will run the transpiled app
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Testing
+The default react-scripts test library and Chai are used for testing. The tests currently only exist on the `FrontendTests` branch.
+```
+npm test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Linting
+The project is using ESLint and Prettier to lint and format the code. The configuration for this is stored in `.eslintrc.json` and `.prettierrc.json` You can use the following commands:
+1. `npm run pretty` to run Prettier
+2. `npm run lint` to run ESLint
+3. `npm run lint:fix` to run ESLint with the --fix prefix which will automatically fix certain linting errors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Flow
+Flow is used as a lightweight static type checker. Flow currently only exist on the `FrontendFlow` branch.
+```
+npm run flow
+```
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Docker
+There app is dockerized, and the Dockerfile builds the app in production mode for the automated deployments
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## CI/CD
+[CircleCI](https://circleci.com/) is used for continuous integration and deployment.
 
-### Making a Progressive Web App
+Developers are required to work locally on a new branch. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+When making a merge request into the 'development' branch, CircleCI will trigger a 'build' job that will build the project, check linting, run flow, and run the tests. The merge request will be rejected if these checks fail.
 
-### Advanced Configuration
+After merging a 'deployToDevelopment' job will trigger which will deploy the app to https://brickblock-frontend-develop.herokuapp.com  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Only after the 'build' and 'deployToDevelopment' jobs have succsefully run will you be able to make a merge request into the 'master' branch which will trigger the final 'deployToProduction' job that will deploy the app to https://brickblock-frontend.herokuapp.com   
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Heroku](https://www.heroku.com/) is used for the automated deployments. CircleCI builds the Docker container and then pushes it to the heroku Docker hub and then releases the application making it visible
