@@ -1,0 +1,34 @@
+#logo{
+  position: relative;
+  top: 25px;
+  left: 2.5%;
+}
+
+header{
+  background-color: #18223C;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+ul{
+  position: relative;
+  left: 80px;
+}
+
+li{
+  margin: 0px !important;
+}
+
+Button{
+  background-color: #18223C !important;
+  color: white !important;
+  margin: 4.5px;
+  position: relative;
+  bottom: 10px;
+  opacity: 0.7;
+  border: 0px !important;
+}
+
+Button:hover{
+  color: #F54269 !important;
+}

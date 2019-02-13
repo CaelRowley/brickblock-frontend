@@ -1,10 +1,16 @@
+#root{
+	width: 100% !important;
+}
+html{
+	width: 100%;
+}
 body {
 	color: #333;
 	font-family: Georgia, Times, 'Times New Roman';
 	line-height: 1.5;
   margin: 0 auto;
-  max-width: 75%px;
-  padding: 32px;
+	max-width: 100%;
+	width: 100%;	
 }
 
 header {
