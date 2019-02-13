@@ -4,8 +4,10 @@ A basic frontend that's built with react and uses redux for the state. This shou
 
 ## Deployment
 There are two deployed environments 
-https://brickblock-frontend-develop.herokuapp.com  For development
-https://brickblock-frontend.herokuapp.com          For production
+
+For development: https://brickblock-frontend-develop.herokuapp.com
+
+For production: https://brickblock-frontend.herokuapp.com          
 ```
 WARNING
 As the application is deployed using the free heroku service they will sleep due to inactivity. 
