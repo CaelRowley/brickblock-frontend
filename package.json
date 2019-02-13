@@ -32,7 +32,8 @@
     "serve": "serve -s build",
     "set-auth0": "scripts/updateAuth0Config.sh",
     "set-graphql-dev": "scripts/updateGraphqlURIDev.sh",
-    "set-graphql-prod": "scripts/updateGraphqlURIProd.sh"
+    "set-graphql-prod": "scripts/updateGraphqlURIProd.sh",
+    "set-is-auth": "scripts/updateIsAuthenticated.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
