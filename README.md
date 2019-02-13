@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# brickblock-backend
+A basic frontend that's built with react and uses redux for the state. This should display mock ICO offering data from the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Deployment
+The frontend is deployed to two different environments. When a code is merged into the `development` branch, if it has passed the automated build tests and linting it will be deployed to the following dev environment:
 
-### `npm start`
+https://brickblock-frontend-develop.herokuapp.com
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When the `development` branch is merged into `master` and all tests have passed it will be deployed to production:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+https://brickblock-frontend.herokuapp.com
+```
+WARNING
+As the application is deployed using the free heroku service they will sleep due to inactivity. 
+Please allow a short while for the app to build and serve if you get no response from the URL.
+```
 
-### `npm test`
+## Access
+The deployed 'brickblock-frontend' apps are protected with 'Auth0' and you will need to sign in with a valid user to access the website. You do not have permission to register your own account and get access. You can however run the application locally without needing to sign in with a user account.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Prerequisites
+1. [NodeJS](https://nodejs.org/)
+2. You also need to have the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend) server running with an exposed graphql endpoint
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Setup
+1. Setup the [brickblock-backend](https://github.com/CaelRowley/brickblock-backend) project and get it hosting a graphql endpoint
+2. Update `src/constants/GraphqlURI.js` to point to the graphql endpoint exposed by 'brickblock-backend' the default value is `http://localhost:8000/graphql`
+3. Run `npm install` to install the dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Quickstart
+Run the frontend locally as follows:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app should now be avilable at http://localhost:3000/
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Scaffolding
+The `src` directory contains the source code for the frontend. It is built using React and Redux. The `src/test` directory contains the source code for the tests. It is built usind the default react-scripts test library and Chai.
+This source code is transpiled to the `build` directory for deployment and testing.
+1. `npm run build` will transpile the `src` and `test` directories into `build`
+2. `npm run serve` will run the transpiled app
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Testing
+The default react-scripts test library and Chai are currently used for testing. The tests currently only exist on the `FrontendTests` branch.
+```
+npm test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Linting
+The project is using ESLint and Prettier to lint and format the code. The configuration for this is stored in `.eslintrc.json` and `.prettierrc.json` You can use the following commands:
+1. `npm run pretty` to run Prettier
+2. `npm run lint` to run ESLint
+3. `npm run lint:fix` to run ESLint with the --fix prefix which will automatically fix certain linting errors
 
-### Code Splitting
+## Flow
+Flow is used as a lightweight static type checker. Flow currently only exist on the `FrontendFlow` branch.
+```
+npm run flow
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Docker
+There app is dockerized, and the Dockerfile builds the app in production mode for the automated deployments
