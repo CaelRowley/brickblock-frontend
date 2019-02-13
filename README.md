@@ -3,13 +3,9 @@ A basic frontend that's built with react and uses redux for the state. This shou
 
 
 ## Deployment
-The frontend is deployed to two different environments. When a code is merged into the `development` branch, if it has passed the automated build tests and linting it will be deployed to the following dev environment:
-
-https://brickblock-frontend-develop.herokuapp.com
-
-When the `development` branch is merged into `master` and all tests have passed it will be deployed to production:
-
-https://brickblock-frontend.herokuapp.com
+There are two deployed environments 
+https://brickblock-frontend-develop.herokuapp.com  For development
+https://brickblock-frontend.herokuapp.com          For production
 ```
 WARNING
 As the application is deployed using the free heroku service they will sleep due to inactivity. 
@@ -68,3 +64,16 @@ npm run flow
 
 ## Docker
 There app is dockerized, and the Dockerfile builds the app in production mode for the automated deployments
+
+## CI/CD
+[CircleCI](https://circleci.com/) is used for continuous integration and deployment.
+
+Developers are required to work locally on a new branch. 
+
+When making a merge request into the 'development' CircleCI will trigger a 'build' job that will build the project, check linting, run flow, and run the tests. The merge request will be rejected if these checks fail.
+
+After merging a 'deployToDevelopment' job will trigger which will deploy the app to https://brickblock-frontend-develop.herokuapp.com  
+
+Only after the 'build' and 'deployToDevelopment' jobs have succsefully run will you be able to make a merge request into the 'master' branch which will trigger the final 'deployToProduction' job that will deploy the app to https://brickblock-frontend.herokuapp.com   
+
+[Heroku](https://www.heroku.com/) is used for the automated deployments. CircleCI builds the Docker container and then pushes it to the heroku Docker hub and then releases the application making it visible
