@@ -12,13 +12,13 @@ const TableauContainer = (props) => {
   if (isAuthenticated()) {
     if (tableauUrl) {
       return (
-        <div className='graph'>
+        <div className="graph">
           <TableauGraph tableauUrl={tableauUrl} />
         </div>
       );
     }
     return (
-      <div className='graph'>
+      <div className="graph">
         <Table data={data} />
       </div>
     );

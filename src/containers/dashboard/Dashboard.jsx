@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
 import './Dashboard.css';
-import logo from './logo.svg';
 import { Animated } from 'react-animated-css';
+import logo from './logo.svg';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauContainer from '../tableauContainer/TableauContainer';
 import * as urls from '../../constants/TableauURLs';
@@ -21,10 +22,7 @@ const Header = (props) => {
   return (
     <div>
       <header>
-        <Animated
-          animationIn="flipInX"
-          isVisible={true}
-        >
+        <Animated animationIn="flipInX" isVisible>
           <img id="logo" src={logo} />
         </Animated>
         <nav>
@@ -97,7 +95,12 @@ const Header = (props) => {
             {isAuthenticated() && (
               <li>
                 <Button>
-                  <Link to="/logout" style={{ color: '#F54269' }}>
+                  <Link
+                    to="/logout"
+                    style={{
+                      color: '#F54269',
+                    }}
+                  >
                     Logout
                   </Link>
                 </Button>
