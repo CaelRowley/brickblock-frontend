@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import isAuthenticated from '../../auth/isAuthenticated';
 import TableauGraph from '../../components/tableauGraph/TableauGraph';
 import Table from '../../components/table/Table';
+import './TableauContainer.css';
 
 const TableauContainer = (props) => {
   const { tableauUrl, data } = props;
@@ -11,13 +12,13 @@ const TableauContainer = (props) => {
   if (isAuthenticated()) {
     if (tableauUrl) {
       return (
-        <div>
+        <div className='graph'>
           <TableauGraph tableauUrl={tableauUrl} />
         </div>
       );
     }
     return (
-      <div>
+      <div className='graph'>
         <Table data={data} />
       </div>
     );
